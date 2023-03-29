@@ -1,0 +1,84 @@
+
+* {
+margin: 0px;
+padding: 0px;
+}
+
+#newfont {
+font-family: "Pirata";
+}
+
+#header {
+position: fixed;
+display: flex;
+flex: row wrap;
+justify-content: space-around;
+height: 50px;
+width: 100%;
+background-color: aquamarine;
+z-index: 30;
+}
+
+.logoName {
+font-family: "Pirata One", cursive;
+}
+
+#header status {
+display: flex;
+flex: column nowrap;
+justify-content: space-between;
+}
+
+#sidebar {
+float: left;
+}
+
+#main {
+top: 50px;
+display: flex;
+flex-flow: row wrap;
+gap: 30px 30px;
+justify-content: flex-start;
+height: auto;
+position: relative;
+padding: 30px;
+}
+
+.itemBox {
+height: auto;
+width: 200px;
+border-radius: 20px;
+padding: 0 0 10px;
+position: relative;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+box-shadow: 0px 3px 3px gray;
+cursor: pointer;
+}
+
+.itemBox img {
+border-radius: 20px;
+object-fit: cover;
+width: 99%;
+aspect-ratio: 1;
+
+margin-bottom: 10px;
+}
+
+.itemCaption {
+width: 100%;
+font-weight: bold;
+}
+
+.ship.busy {
+filter: grayscale(1);
+background-color: lightgrey;
+transition: all 0.75s ease-in-out;
+}
+
+#footer {
+top: 50px;
+font-family: monospace;
+text-align: center;
+position: relative;
+}

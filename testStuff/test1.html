@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .shape {
+        width: 200px;
+        height: 70px;
+        background: #000;
+        margin: 50px;
+        position: relative;
+      }
+
+      .shape:before {
+        display: block;
+        content: "";
+        height: 0px;
+        width: 0;
+        border: 50px solid #f00;
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid transparent;
+        position: absolute;
+        top: 70px;
+      }
+      .shape:after {
+        display: block;
+        content: "";
+        height: 0;
+        width: 0;
+        border: 50px solid #f00;
+        border-bottom: 50px solid transparent;
+        border-right: 50px solid transparent;
+        position: absolute;
+        top: 70px;
+        left: 100px;
+      }
+
+      .myShape {
+        width: 200px;
+        height: 300px;
+        background: antiquewhite;
+        border: 1px solid rgb(107, 100, 92);
+        border-bottom-right-radius: 10px;
+        position: relative;
+      }
+
+      .myShape:after {
+        display: block;
+        content: "";
+        height: 50px;
+        width: 50px;
+        background: antiquewhite;
+        border: 1px solid rgb(107, 100, 92);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        top: 0px;
+        left: 200px;
+      }
+
+      .myLogo {
+        content: "Arr";
+        color: #760a0a;
+      }
+
+      .myLogo::after {
+        content: "B";
+        color: #1c8bc1;
+      }
+
+      .myLogo::after::after {
+        content: "a";
+        color: #ddd417;
+      }
+
+      .myLogo::after::after::after {
+        content: "y";
+        color: #5e2a0e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="myShape"></div>
+    <br />
+    <div class="myLogo"></div>
+
+    <div id="stuff"></div>
+
+    <script>
+      class Test1 {
+        constructor(a, b, c) {
+          this.a = a;
+          this.b = b;
+          this.c = c == null ? b : c;
+        }
+      }
+
+      var classTest = new Test1(1, 2);
+
+      var elem = document.getElementById("stuff");
+      var elem2 = document.createElement("p");
+      var elem3 = document.createTextNode("This is some text!");
+      elem2.appendChild(elem3);
+      elem.appendChild(elem2);
+      elem.appendChild(elem2);
+      elem.appendChild(elem2);
+      elem3.textContent = "fooled you!";
+
+      class Test2 {
+        static #nextID = 0;
+        constructor() {
+          this.id = Test2.#nextID++;
+        }
+      }
+
+      var staticTest = new Test2();
+      var staticTest2 = new Test2();
+    </script>
+  </body>
+</html>
